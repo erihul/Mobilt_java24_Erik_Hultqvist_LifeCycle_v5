@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Mobilt_java24_Erik_Hultqvist_LifeCycle_v5" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="materialButtonStyle">
+            @style/btnColorStyle
+        </item>
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Mobilt_java24_Erik_Hultqvist_LifeCycle_v5" parent="Base.Theme.Mobilt_java24_Erik_Hultqvist_LifeCycle_v5" />
+
+    <style name="Theme.Mobilt_java24_Erik_Hultqvist_LifeCycle_v5.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Mobilt_java24_Erik_Hultqvist_LifeCycle_v5.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Mobilt_java24_Erik_Hultqvist_LifeCycle_v5.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="btnColorStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/btnGreen</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+    <style name="loginbtn" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="backgroundTint">@color/black</item>
+    </style>
+</resources>

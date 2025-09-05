@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <!-- MAIN CONTENT -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/birdBlue"
+            android:paddingTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+
+        />
+
+        <!-- App Icon -->
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:fontFamily="@font/sans_i_am"
+            android:paddingEnd="10dp"
+            android:paddingTop="20dp"
+            android:text="Logged in as..."
+            android:textColor="@color/birdYellow"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.942"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="119dp"
+            android:layout_height="116dp"
+            android:layout_marginTop="8dp"
+            android:padding="20dp"
+            android:src="@drawable/bird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <!-- UserPROFILE -->
+
+        <ScrollView
+            android:id="@+id/profile_form_scroll"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:id="@+id/form_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Name -->
+                <EditText
+                    android:id="@+id/input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Full Name"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/birdBlue" />
+
+                <!-- Age -->
+                <EditText
+                    android:id="@+id/input_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Age"
+                    android:inputType="number"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/birdBlue"
+                    android:layout_marginTop="12dp" />
+
+                <!-- Phone -->
+                <EditText
+                    android:id="@+id/input_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone Number"
+                    android:inputType="phone"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/birdBlue"
+                    android:layout_marginTop="12dp" />
+
+                <!-- Newsletter -->
+                <CheckBox
+                    android:id="@+id/checkbox_newsletter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subscribe to newsletter"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/birdBlue" />
+
+                <!-- Theme Color -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Theme Color:"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/birdBlue"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/theme_colors"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Save Button -->
+                <Button
+                    android:id="@+id/btn_save_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save Profile Info"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/birdBlue"
+                    android:textColor="@android:color/white"
+                    android:padding="12dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- DRAWER MENU -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="@color/birdBlue2"
+        app:menu="@menu/drawer_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>
