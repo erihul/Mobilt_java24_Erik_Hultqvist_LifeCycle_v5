@@ -10,14 +10,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
 
 
 class BlankFragment : Fragment() {
-
     val TAG = "ERIK"
     lateinit var emailInput : TextInputEditText
     lateinit var passwordInput : TextInputEditText
@@ -28,6 +26,7 @@ class BlankFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+/*
 
         val db = Firebase.firestore
 
@@ -40,22 +39,21 @@ class BlankFragment : Fragment() {
         
 
 // Add a new document with a generated ID
-        /*db.collection("users")
+        */
+/*db.collection("users")
             .add(user)
             .addOnSuccessListener { documentReference ->
                 Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
             }
             .addOnFailureListener { e ->
                 Log.w(TAG, "Error adding document", e)
-            }*/
+            }*//*
 
 
 
+*/
         Log.i(TAG, "onCreateView: BlankFragment")
-        // Inflate the layout for this fragment
         var  v:View = inflater.inflate(R.layout.fragment_blank, container, false)
-
-
 
         return v
     }
@@ -65,8 +63,6 @@ class BlankFragment : Fragment() {
         emailInput   = view.findViewById<TextInputEditText>(R.id.emailEdit)
         passwordInput = view.findViewById<TextInputEditText>(R.id.passwordEdit)
         registerbtn = view.findViewById<Button>(R.id.button2)
-
-
 
         view.setOnClickListener {
             Log.i(TAG, "onViewCreated: nothing!!!")
@@ -78,13 +74,11 @@ class BlankFragment : Fragment() {
             if(emailInput.text.toString().isEmpty() || passwordInput.text.toString().isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
 
-
             } else {
                 Log.i(TAG, "onCreateView: Registerbtn Pushed")
                 Log.i(
                     TAG,
                     "onCreateView: email " + emailInput.text.toString() + " password: " + passwordInput.text.toString()
-
                 )
 
                 val user = hashMapOf(
